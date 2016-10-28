@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+body{
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	color:#4e4c4c;	
+	overflow-y:scroll;
+	overflow-x:hidden;	
+	background:#68c1dd;	
+	background:url(../images/1.jpg) no-repeat;	
+	font-family:Arial; 
+	
+}
+.huanL{ 
+	background-image: url("../images/L.png");
+    height: 146px !important;
+    width: 24px !important;
+}
+.huanR{ 
+	background-image: url("../images/R.png");
+    height: 146px !important;
+    width: 24px !important;
+}
+.huanL:before,
+.huanR:before{
+    content: "" !important;
+}
+.carousel {
+    background: url("../images/hbg.png");
+    height: 80% !important;
+    padding: 10px;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0 ;
+    margin: auto;
+}
+.carousel .item{
+	background-color: transparent !important;
+}
+@media (min-width: 768px)
+.carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+}
+.test{
+    width: 900px;
+    height: 643px;
+    position: relative;
+    left: 50%;
+    margin-left: -450px;
+    z-index: 2;
+    margin-top: 156px;
+}

@@ -11,7 +11,7 @@ body{
 	
 }
 
-span{display:inline-block;}/*让span可以设置宽高*/
+span{display:inline-block;}
 img{border:0px;vertical-align:top;}
 div,form,img,ul,ol,li,dl,dt,dd {margin: 0; padding: 0; border: 0; }
 li{list-style-type:none;}
