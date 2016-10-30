@@ -8,18 +8,21 @@ body{
 	overflow-x:hidden;	
 	background:#68c1dd;	
 	background:url(../images/1.jpg) no-repeat;	
-	font-family:Arial; 
+	font-family:Arial;
+	padding-bottom: 0px !important;
 	
 }
 .huanL{ 
 	background-image: url("../images/L.png");
     height: 146px !important;
     width: 24px !important;
+    top: 36% !important;
 }
 .huanR{ 
 	background-image: url("../images/R.png");
     height: 146px !important;
     width: 24px !important;
+    top: 36% !important;
 }
 .huanL:before,
 .huanR:before{
@@ -27,7 +30,7 @@ body{
 }
 .carousel {
     background: url("../images/hbg.png");
-    height: 80% !important;
+    height: 90% !important;
     padding: 10px;
     width: 80%;
     position: absolute;
@@ -36,22 +39,74 @@ body{
     left: 0;
     right:0 ;
     margin: auto;
+    min-width:780px;
+    margin-bottom: auto !important;
 }
+.carousel-indicators {
+	bottom: 96px !important;
+}
+/* .carousel-indicators .active { */
+/*     width: auto !important; */
+/*     height: auto !important; */
+/*     margin: auto !important; */
+/*     background-color: transparent !important; */
+/* } */
+/* .carousel-indicators li { */
+/*     width: auto !important; */
+/*     text-indent: 0 !important; */
+/*     border: none !important; */
+/*     border-radius: 0 !important; */
+/* } */
 .carousel .item{
 	background-color: transparent !important;
 }
-@media (min-width: 768px)
-.carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 14px !important;
-    line-height: 1.2 !important;
+.carousel-caption{
+	bottom: auto !important;
+	color: #4e4c4c !important;
+	text-shadow: none !important;
+	right: 13% !important;
+	left: 13% !important;
 }
-.test{
-    width: 900px;
-    height: 643px;
-    position: relative;
-    left: 50%;
-    margin-left: -450px;
-    z-index: 2;
-    margin-top: 156px;
+.carousel-caption h1{
+	margin-bottom: 25px;
+	font-size: 28px;
+}
+.carousel-caption p {
+    margin-bottom: 45px !important;
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+}
+.carousel-caption p img {
+    width: 90%;
+}
+.carousel_navbar{
+    position: absolute;
+    bottom: 5%;
+    width: 60%;
+    position: absolute;
+    bottom: 28px;
+    left: 5%;
+    right: 0;
+    margin: auto;
+    min-width: 780px;
+}
+#navbar{
+	font-size: 18px;
+}
+#navbar a{
+	color: #000;
+    white-space: nowrap;
+}
+.divMain{
+	height: 90% !important;
+    padding: 10px;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    min-width: 780px;
+    margin-bottom: auto !important;
 }
