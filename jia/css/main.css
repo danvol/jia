@@ -222,7 +222,10 @@ body {
 	padding-left: 8px;
 	padding-right: 8px;
 }
-
+.menu_check{
+	background-color: #fff !important;
+    color: #505050 !important;
+}
 a:hover {
 	font-size: 12px;
 	color: #505050;
@@ -344,11 +347,13 @@ a:link {
 	padding-right: 0px;
 	padding-left: 0px;
 }
-.D3logo{
+
+.D3logo {
 	margin-bottom: 10px;
 	width: 217px;
 	height: 96px;
 }
+
 .D3K1 {
 	background: url(../images/hbg.png);
 	border: #000 solid 1px;
@@ -504,4 +509,72 @@ a:link {
 	overflow: hidden;
 	background: #fff;
 	margin-top: 7px;
+}
+
+.vertical_menu {
+	background-color: #0040FF;
+	background: rgba(0,0,255,0.2);
+	color: #ffffff;
+	border: solid 2px #ffffff;
+	-ms-writing-mode: tb-rl;
+	-webkit-writing-mode: vertical-lr;
+	writing-mode: sideways-lr;
+	text-align: center;
+	width: 30px;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+	align-items: center; /* 縦方向中央揃え */
+	-webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+	justify-content: center; /* 横方向中央揃え */
+}
+.vertical_menu>p{
+	margin: 0;
+}
+.goal_country {
+	height: 283px;
+}
+
+.targets {
+	height: 92px;
+}
+
+.indicators {
+	height: 92px;
+}
+
+.home {
+	height: 58px;
+}
+
+.simulation_tool {
+	height: 379px;
+}
+
+.slideshow {
+	height: 269px;
+}
+
+.resources {
+	height: 92px;
+}
+
+.maintext {
+	height: 232px;
+}
+
+.navigate {
+	height: 135px;
+}
+.introduction{
+	height: 269px;
+}
+.exploring_FWE{
+	height: 367px;
+}
+.exploring_FWE_r_div{
+	height: 367px !important;
+}
+.exploring_FWE_r_textarea{
+	height: 348px !important;
 }
