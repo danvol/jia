@@ -1,0 +1,67 @@
+.hexagon {
+	position: relative;
+	width: 100px;
+	height: 50px;
+	background-color: #39a9d6;
+}
+.hexagon:before {
+	position: absolute;
+	top: -35px;
+	left: 0;
+	width: 0;
+	height: 0;
+	content: "";
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 35px solid #39a9d6;
+}
+.hexagon:after {
+	position: absolute;
+	bottom: -35px;
+	left: 0;
+	width: 0;
+	height: 0;
+	content: "";
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 35px solid #39a9d6;
+}
+
+#mynetwork {
+      width: 100%;
+      height: 100%;
+      border: 1px solid lightgray;
+    }
+#optionsContainer {
+  height:0px;
+}
+
+/* スタイル適当です */
+.nav {
+    display: table;
+    width: 100%;
+    background: #FFF;
+}
+.nav__item {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.nav__item + .nav__item {
+    border-left: 1px solid #CCC;
+}
+.nav__item a {
+    display: block;
+    padding: 15px 0;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.box {
+	float: left;
+}
+
+.boxContainer {
+	overflow: hidden;
+}

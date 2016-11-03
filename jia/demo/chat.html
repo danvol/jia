@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Chart.js Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/Chart.js"></script>
+
+<style>
+/* Basic styles */
+* { box-sizing:border-box }
+*:before, *:after { box-sizing:inherit }
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  margin-bottom: 5rem;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  font-family: 'Roboto', 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  color:#555;
+  text-align: center;
+}
+
+a { text-decoration: none }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#backlink,
+#backlink a{
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #14B694;
+}
+
+#backlink a:hover{
+  color: #3CC8AB;
+}
+
+h1 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+h2 {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  margin-bottom: 5rem;
+}
+
+/* Customize for demo*/
+.box {
+	max-width: 800px;
+	margin: 0 auto;
+}
+.box2 {
+	max-width: 450px;
+	margin: 0 auto;
+}
+
+.canvas {
+	background:url(test.png) ;
+	background-repeat: no-repeat;
+	-moz-background-size:100% 100%;
+	background-size:100% 100%;
+}
+</style>
+<script>
+function displayPieChart() {
+
+	var data = {
+				labels:["SDG1","SDG2","SDG3","SDG4","SDG5","SDG6","SDG7","SDG8","SDG9","SDG10","SDG11","SDG12","SDG13","SDG14","SDG15","SDG16","SDG17"],
+				datasets:[
+					{
+						label:"Bangladesh",
+						backgroundColor:"rgba(0,96,255,0.2)",
+						borderColor:"rgba(0,96,255,1)",
+						pointBackgroundColor:"rgba(0,96,255,1)",
+						pointBorderColor:"#0060ff",
+						pointHoverBackgroundColor:"#0060ff",
+						pointHoverBorderColor:"rgba(0,96,255,1)",
+						hitRadius:5,
+						data:[65,59,90,81,56,55,40,65,59,90,81,56,55,40,66,34,100]
+					},
+					
+					{
+						label:"Cambodia",
+						backgroundColor:"rgba(226,208,0,0.2)",
+						borderColor:"rgba(226,208,0,1)",
+						pointBackgroundColor:"rgba(226,208,0,1)",
+						pointBorderColor:"#e2d000",
+						pointHoverBackgroundColor:"#e2d000",
+						pointHoverBorderColor:"rgba(226,208,0,1)",
+						hitRadius:5,
+						data:[28,48,40,19,96,27,100,28,48,40,19,96,27,100,33,33,100]
+					},
+					
+					{
+						label:"China",
+						backgroundColor:"rgba(1,255,135,0.2)",
+						borderColor:"rgba(1,255,135,1)",
+						pointBackgroundColor:"rgba(1,255,135,1)",
+						pointBorderColor:"#00ff87",
+						pointHoverBackgroundColor:"#00ff87",
+						pointHoverBorderColor:"rgba(1,255,135,1)",
+						hitRadius:5,data:[2,48,65,19,79,34,54,2,48,65,19,79,34,54,98,33,11]
+					},
+					{
+						label:"India",
+						backgroundColor:"rgba(135,255,255,0.2)",
+						borderColor:"rgba(135,255,255,1)",
+						pointBackgroundColor:"rgba(135,255,255,1)",
+						pointBorderColor:"#87ffff",
+						pointHoverBackgroundColor:"#87ffff",
+						pointHoverBorderColor:"rgba(135,255,255,1)",
+						hitRadius:5,data:[98,45,40,32,96,79,34,98,45,40,32,96,79,34,55,66,77]
+					},
+					
+					{
+						label:"Indonesia",
+						backgroundColor:"rgba(255,255,0,0.2)",
+						borderColor:"rgba(255,255,0,1)",
+						pointBackgroundColor:"rgba(255,255,0,1)",
+						pointBorderColor:"#ffff00",
+						pointHoverBackgroundColor:"#ffff00",
+						pointHoverBorderColor:"rgba(255,255,0,1)",
+						hitRadius:5,data:[99,89,67,19,32,1,65,99,89,67,19,32,1,65,11,22,33]
+					},
+					{
+						label:"Japan",
+						backgroundColor:"rgba(255,158,255,0.2)",
+						borderColor:"rgba(255,158,255,1)",
+						pointBackgroundColor:"rgba(255,158,255,1)",
+						pointBorderColor:"#fe9ef2",
+						pointHoverBackgroundColor:"#fe9ef2",
+						pointHoverBorderColor:"rgba(255,158,255,1)",
+						hitRadius:5,
+						data:[32,54,89,19,23,57,92]
+					},
+					
+					{
+						label:"Korea, Rep.",
+						backgroundColor:"rgba(255,158,114,0.2)",
+						borderColor:"rgba(255,158,114,1)",
+						pointBackgroundColor:"rgba(255,158,114,1)",
+						pointBorderColor:"#ff9e72",
+						pointHoverBackgroundColor:"#ff9e72",
+						pointHoverBorderColor:"rgba(255,158,114,1)",
+						hitRadius:5,data:[28,48,2,19,34,27,12,28,48,2,19,34,27,12,55,44,33]
+					},
+					{
+						label:"Philippines",
+						backgroundColor:"rgba(255,158,34,0.2)",
+						borderColor:"rgba(255,158,34,1)",
+						pointBackgroundColor:"rgba(255,158,34,1)",
+						pointBorderColor:"#ff9e22",
+						pointHoverBackgroundColor:"#ff9e22",
+						pointHoverBorderColor:"rgba(255,158,34,1)",
+						hitRadius:5,
+						data:[28,23,3,67,32,27,39,28,23,3,67,32,27,39,44,44,44]
+					},
+					
+					{
+						label:"Vietnam",
+						backgroundColor:"rgba(232,99,34,0.2)",
+						borderColor:"rgba(232,99,34,1)",
+						pointBackgroundColor:"rgba(232,99,34,1)",
+						pointBorderColor:"#e86322",
+						pointHoverBackgroundColor:"#e86322",
+						pointHoverBorderColor:"rgba(232,99,34,1)",
+						hitRadius:5,data:[25,48,40,19,96,56,32,25,48,40,19,96,56,32,33,33,44]
+					}
+				]
+			};
+			var options = {
+			    // 値のラインが棒グラフの値の上にかぶさるようにするか    
+			    scaleOverlay : true,
+			    // 値の開始値などを自分で設定するか
+			    scaleOverride : false,
+			    
+			    // 以下の 3 オプションは scaleOverride: true の時に使用
+			    // 値のステップ数
+			    scaleSteps : 10,
+			    // 値のステップする大きさ
+			    scaleStepWidth : 10,
+			    // 値の始まりの値
+			    scaleStartValue : 0,
+			    // 値の円ラインの表示
+			    scaleShowLine : true,
+			    // 円ラインの色
+			    scaleLineColor : "rgba(0, 0, 0, .1)",
+			    // 円ラインの幅
+			    scaleLineWidth : 1,
+			    // ラベルの表示
+			    scaleShowLabels : false,
+			    // ラベルの表示フォーマット
+			    scaleLabel : "<%=value%>%",
+			    // ラベルのフォント
+			    scaleFontFamily : "'Arial'",
+			    // ラベルのフォントサイズ
+			    scaleFontSize : 12,
+			    // ラベルのフォントスタイル, normal, italic など
+			    scaleFontStyle : "italic",
+			    // ラベルの文字色
+			    scaleFontColor : "#666",    
+			    // ラベルの背景色を塗りつぶすか
+			    scaleShowLabelBackdrop : true,
+			    // ラベルの背景色
+			    scaleBackdropColor : "rgba(255, 255, 255, 0.8)",
+			    // ラベルの Padding 上下
+			    scaleBackdropPaddingY : 5,
+			    // ラベルの Padding 左右
+			    scaleBackdropPaddingX : 5,
+			    // 中央からポイントラベルに向かう線の表示
+			    angleShowLineOut : true,
+			    // 中央からポイントラベルに向かう線の色
+			    angleLineColor : "rgba(0, 0, 0, .1)",
+			    // 中央からポイントラベルに向かう線の幅
+			    angleLineWidth : 1,            
+			    // ポイントラベルのフォント
+			    pointLabelFontFamily : "'Arial'",
+			    // ポイントラベルのフォントスタイル
+			    pointLabelFontStyle : "normal",
+			    // ポイントラベルのサイズ
+			    pointLabelFontSize : 12,
+			    // ポイントラベルの色
+			    pointLabelFontColor : "#999",
+			    // 値の点の表示
+			    pointDot : true,
+			    // 値の点の大きさ
+			    pointDotRadius : 2,
+			    // 値の点の線の幅
+			    pointDotStrokeWidth : 1,
+			    // データ部分の枠線の表示？変化がなかった
+			    datasetStroke : true,
+			    // データ部分の枠線の幅
+			    datasetStrokeWidth : 1,
+			    // データ部分の塗りつぶし？変化がなかった
+			    datasetFill : true,
+			    // 表示の時のアニメーション
+			    animation : false,
+			    // アニメーションの速度 ( ステップ数 )
+			    animationSteps : 60,
+			    // アニメーションの種類, 以下が用意されている
+			    // linear, easeInQuad, easeOutQuad, easeInOutQuad, easeInCubic, easeOutCubic,
+			    // easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart, easeInQuint,
+			    // easeOutQuint, easeInOutQuint, easeInSine, easeOutSine, easeInOutSine,
+			    // easeInExpo, easeOutExpo, easeInOutExpo, easeInCirc, easeOutCirc, easeInOutCirc,
+			    // easeInElastic, easeOutElastic, easeInOutElastic, easeInBack, easeOutBack,
+			    // easeInOutBack, easeInBounce, easeOutBounce, easeInOutBounce
+			    animationEasing : "easeOutQuad",
+			    // アニメーション終了後に実行する処理
+			    // animation: false の時にも実行されるようです
+			    // e.g. onAnimationComplete : function() {alert('complete');}
+			    onAnimationComplete : null
+			};
+	var ctx = document.getElementById("myRadarChart");
+	var myRadarChart = new Chart(ctx,{
+			type:'radar',
+			data
+		});
+}
+</script>
+
+</head>
+<body onload="displayPieChart();">
+<div class="box">
+<div class="box2" >
+	<canvas id="myRadarChart" class="canvas" width="450" height="450"></canvas>
+</div>
+</div>
+</body>
+</html>

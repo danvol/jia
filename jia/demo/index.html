@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[DEMO] jquery.fullPage で横にスライドするパネル型ページを作成する</title>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<link rel="stylesheet" href="css/rokaku.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/jquery.easings.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+	<script type="text/javascript">
+		(function ($) {
+			$(function () {
+				$('#fullpage').fullpage({
+					anchors: ['page'],
+					resize: false
+				});
+				addHomeIcon();
+			});
+		})(jQuery);
+	</script>
+	<style>
+		body {
+			font: 14px/1.7 'Oswald', arial, helvetica, sans-serif;
+			color: #333;
+		}
+		div, ul, li, p, h1, h2, h3 {
+			padding: 0;
+			margin: 0;
+		}
+		.cf:before,
+		.cf:after {
+			content: " ";
+			display: table;
+		}
+		.cf:after {
+			clear: both;
+		}
+		.cf {
+			*zoom: 1;
+		}
+		header {
+			position: fixed;
+			z-index: 50;
+			background: #fff;
+			width: 100%;
+		}
+		#head-in {
+			padding: 20px;
+		}
+		header p.link {
+			float: right;
+		}
+		header h1 {
+			font-weight: normal;
+			font-size: 15px;
+			float: left;
+		}
+		a {
+			color: #333;
+		}
+		a:hover {
+			color: #960014;
+			text-decoration: none;
+		}
+		header a {
+			text-decoration: none;
+		}
+		header a:hover {
+			color: #960014;
+			text-decoration: underline;
+		}
+		.section {
+			background-image: url(img/yjimage.jpg);
+			background-size: cover;
+		}
+		.section p {
+			font-family: Arial, "メイリオ", "ＭＳ Ｐゴシック", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Osaka, sans-serif;
+			margin-bottom: 1em;
+		}
+		.panel {
+			background-color: #fff;
+			background-color: rgba(255, 255, 255, 0.8);
+			height: 700px;
+			width: 800px;
+			padding: 80px;
+			margin: 0 auto;
+			box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+		}
+		h2 {
+			border-bottom: solid 1px #999;
+			margin-bottom: 20px;
+			font-weight: normal;
+			font-size: 24px;
+		}
+		nav {
+			position: fixed;
+			bottom: 80px;
+			width: 100%;
+			text-align: center;
+			padding: 10px;
+			z-index: 50;
+		}
+		nav li {
+			display: inline;
+		}
+		nav li a {
+			padding: 6px 26px;
+			color: #000000;
+			text-decoration: none;
+			margin: 0;
+			/*background: #26120a;*/
+		}
+		nav li a:hover {
+			color: #fff;
+			background: #3f0006;
+		}
+		
+		.div-home{
+			position: relative;
+			left:-50px;
+			top:-50px;
+		}
+		
+		.sdg{
+			width: 150px;
+			height: 80px;
+			position: relative;
+			cursor:pointer;
+			left:280px;
+			top:395px;
+		}
+		.sdg2{
+			width: 250px;
+			height: 80px;
+			position: relative;
+			cursor:pointer;
+			left:550px;
+			top:280px;
+		}
+		
+		.liu{
+			width: 45px;
+			height: 80px;
+			background-color: #f7fdfd;
+			position: relative;
+			cursor:pointer;
+			left:150px;
+			top:100px;
+		}
+		
+		.left{
+			width: 0;
+			height: 0;
+			position:absolute;
+			left:-25px;
+			top:0;
+			border-right:25px solid #f7fdfd;
+			border-top:40px solid transparent;
+			border-bottom:40px solid transparent;
+		}
+		.right{
+			width: 0;
+			height: 0;
+			position:absolute;
+			right:-25px;
+			top:0;
+			border-left:25px solid #f7fdfd;
+			border-top:40px solid transparent;
+			border-bottom:40px solid transparent;
+		}
+	</style>
+	<script type="text/javascript"> 
+var k=0;
+function cg(n) {
+var n1=n+"z";
+var n2=n+"y";
+var color=new Array("black","red");
+var bcolor=new Array("25px solid black","25px solid red");
+var m=k%2;
+document.getElementById(n).style.backgroundColor=color[m];
+document.getElementById(n1).style.borderRight=bcolor[m];
+document.getElementById(n2).style.borderLeft=bcolor[m];
+k++;
+}
+
+function addHomeIcon(){
+    $home = $('.div-home');
+	for (var i = 1; i < 10; i++){
+    	var elem = "<div id=\"liu" + i + "\" class=\"liu\" onclick=\"cg(this.id)\" alt=\"Methodology\">";
+		elem = elem + "<div class=\"left\" id=\"liu"+i+"z\"></div>";
+		elem = elem + "<div class=\"right\" id=\"liu"+i+"y\"></div>";
+		elem = elem + "</div>";
+    	$home.append(elem);
+	}
+	
+	setHomeicon();
+}
+
+function setHomeicon(){
+	$('#liu1').css({'left':'250px', 'top':'140px'});
+	$('#liu2').css({'left':'450px', 'top':'60px','background-color':'silver'});
+	$('#liu2z').css({'border-right':'25px solid silver'});
+	$('#liu2y').css({'border-left':'25px solid silver'});
+	
+	$('#liu3').css({'left':'170px', 'top':'30px'});
+	$('#liu4').css({'left':'170px', 'top':'40px'});
+	$('#liu5').css({'left':'250px', 'top':'10px'});
+	$('#liu6').css({'left':'450px', 'top':'-70px','background-color':'silver'});
+	$('#liu6z').css({'border-right':'25px solid silver'});
+	$('#liu6y').css({'border-left':'25px solid silver'});
+	$('#liu7').css({'left':'530px', 'top':'-200px','background-color':'silver'});
+	$('#liu7z').css({'border-right':'25px solid silver'});
+	$('#liu7y').css({'border-left':'25px solid silver'});
+	
+	$('#liu8').css({'left':'610px', 'top':'-230px','background-color':'dimgray'});
+	$('#liu8z').css({'border-right':'25px solid dimgray'});
+	$('#liu8y').css({'border-left':'25px solid dimgray'});
+	
+	$('#liu9').css({'left':'690px', 'top':'-360px','background-color':'dimgray'});
+	$('#liu9z').css({'border-right':'25px solid dimgray'});
+	$('#liu9y').css({'border-left':'25px solid dimgray'});
+} 
+
+</script>
+</head>
+<body>
+<header>
+</header>
+<div id="fullpage">
+	<div class="section">
+		<div class="slide" data-anchor="slide1">
+			<div class="panel">
+			<div class="div-home">
+				<!--<div class="hexagon_p1">
+				<div class="hexagon" onclick="" ></div>
+				</div>
+								<div class="hexagon_p2">
+				<div class="hexagon" onclick="" ></div>
+				</div>
+								<div class="hexagon_p3">
+				<div class="hexagon" onclick="" ></div>
+				</div>
+								<div class="hexagon_p4">
+				<div class="hexagon" onclick="" ></div>
+				</div>
+								<div class="hexagon_p5">
+				<div class="hexagon" onclick="" ></div>
+				</div>
+								<div class="hexagon_p6">
+				<div class="hexagon" onclick="" ></div>
+				</div>
+				<div class="hexagon_p7">
+				<div class="hexagon" onclick="" ></div>
+				</div>
+				<div class="hexagon_p8">
+				<div class="hexagon" onclick="" ></div>
+				</div>
+				<div class="hexagon_p9">
+				<div class="hexagon" onclick="" ></div>
+				</div>
+				
+				<div id="liu" onclick="cg(this.id)">
+			    	<div class="left" id="liuz"></div>
+			    	<div class="right" id="liuy"></div>
+			    </div>
+			    				<div id="liu1" class="liu" onclick="cg(this.id)">
+			    	<div class="left" id="liuz"></div>
+			    	<div class="right" id="liuy"></div>
+			    </div>
+			     -->
+			     <div class="sdg">
+<p><b><font size="7" color="#808080">S D G</font></b></p>
+			     </div>
+			     <div class="sdg2">
+<p><b><font size="7" color="#808080">Inter Act</font></b></p>
+			     </div>
+			     </div>
+			</div>
+		</div>
+		<div class="slide" data-anchor="slide2">
+			<div class="panel">
+				<h2>Introducing the Overall Project</h2>
+				<pre>
+Introducing the Overall Project
+				</pre>
+			</div>
+		</div>
+		<div class="slide" data-anchor="slide3">
+			<div class="panel">
+				<h2>Introducing the Tool And Features</h2>
+				<pre>
+Introducing the Tool And Features
+				</pre>
+			</div>
+		</div>
+	</div>
+	<nav>
+		<li><a href="">Methodology</a></li>
+		<li><a href="">Data & Analysis</a></li>
+		<li><a href="">Simulation</a></li>
+		<li><a href="">Publications</a></li>
+		<li><a href="">IGES HomePage</a></li>
+		<br>
+		<li><a href="">Urban Targets</a></li>
+		<li><a href="">Ecological Footprint</a></li>
+		<li><a href="">Food-Water-Energy Nexus</a></li>
+		<li><a href="">Impressum</a></li>
+	</nav>
+</div>
+</body>
+</html>

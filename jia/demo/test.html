@@ -1,0 +1,120 @@
+<script type="text/javascript">
+    <!--
+    load();
+    function load(){
+        var span = document.getElementsByTagName("span");
+        if (span != null) {
+            for (i = 0; i < span.length; i++) {
+                changeColor(span[i], "color" + (i+1));
+            }
+        }
+    }
+    function changeColor(elements, colorId) {
+        var red = elements.slider( "value" ) * 100,
+                green = 180,
+                blue = 180,
+                hex = hexFromRGB( red, green, blue );
+        $( "#" + colorId ).css( "background-color", "#" + hex );
+
+    }
+
+    function hexFromRGB(r, g, b) {
+        var hex = [
+            r.toString( 16 ),
+            g.toString( 16 ),
+            b.toString( 16 )
+        ];
+        $.each( hex, function( nr, val ) {
+            if ( val.length === 1 ) {
+                hex[ nr ] = "0" + val;
+            }
+        });
+        return hex.join( "" ).toUpperCase();
+    }
+
+    // output actual $("#eq").html()
+    function warm()
+    {
+        fid("output").innerHTML = fid("eq").innerHTML.replaceAll("<", "&lt;").replaceAll(">", "&gt;<br/>");
+    }
+
+    // output document.body.innerHTML
+    function warm2()
+    {
+        fid("output2").innerHTML = document.body.innerHTML.replaceAll("<", "&lt;").replaceAll(">", "&gt;<br/>");
+    }
+
+    // replace org to dest in expression.
+    String.prototype.replaceAll = function (org, dest){
+        return this.split(org).join(dest);
+    }
+
+    // return document.getElementById(id)
+    function fid(id){
+        return document.getElementById(id);
+    }
+
+    // replace org to dest in expression
+    function replaceAll(expression, org, dest){
+        return expression.split(org).join(dest);
+    }
+
+    // output the slider HTML
+    var cnt = 1;
+    var sample = '<DIV style="position:absolute;top:%top%px;left:100px;border:black 1px solid;background:#69BBBB;" id="color%cnt%">';
+    sample += '    test<SPAN id="s%cnt%" class="ui-slider ui-widget ui-widget-content ui-corner-all ui-slider-horizontal" sizcache06150691335632016="2 3 1" jQuery182023679669074682297="%cCnt%" rel="1" sizset="true" sizcache047932779737654934="59 19 422" jQuery18204489214198968289="%jCnt%">';
+    sample += '        <DIV style="WIDTH: 0%" class="ui-slider-range ui-widget-header ui-slider-range-min"></DIV>';
+    sample += '        <A style="LEFT: 0%" id=a%cnt% class="ui-slider-handle ui-state-default ui-corner-all" href="file:///C:/Users/Administrator/Desktop/sliders.html#" jQuery182023679669074682297="%csCnt%" jQuery18205026261943648269="%jsCnt%">';
+    sample += '        </A>';
+    sample += '        <DIV style="WIDTH: 0%; OVERFLOW: hidden" class="ui-slider-range ui-widget-header ui-slider-range-min">';
+    sample += '        </DIV>';
+    sample += '    </SPAN>';
+    sample += '    <P></P>';
+    sample += '</DIV>';
+
+    $(function(){
+        // 最初からある要素に動作を設定（初期設定）
+        $("#eq > div > span").each(function(){
+            init(this);
+        });
+
+        // 新しく要素を追加（動作を設定）
+        $("#create").click(function(){
+            var temp = sample;
+            var temp = temp.replaceAll("%cnt%", cnt);
+            var temp = temp.replaceAll("%jCnt%",  cnt * 12 + 6);
+            var temp = temp.replaceAll("%cCnt%", (cnt+1) * 12 - 2);
+            var temp = temp.replaceAll("%jsCnt%",  cnt * 12 + 2);
+            var temp = temp.replaceAll("%csCnt%", (cnt+1) * 12 - 6);
+            var temp = temp.replaceAll("%top%", cnt * 100);
+            //alert(temp);
+            var elm = $(temp);
+            $("#eq").append(elm);
+            // 下の行をコメントアウトすると追加されるのみになる
+            init($("#s" + cnt));
+            cnt++;
+        });
+
+        // 要素に初期サイズと動作を設定する関数
+        function init(elm){
+            var value = parseInt( elm.attr("rel"), 10 );
+            elm.slider({
+                value: value,
+                orientation: "horizontal",
+                range: "min",
+                min: 1,
+                max: 2,
+                animate: true,
+                slide: function(event, ui) {
+                    id = $(this).attr("id").replaceAll("s", "");
+                    changeColor(elm, "color" + id);
+                },
+                change: function(event, ui) {
+                    id = elm.attr("id").replaceAll("s", "");
+                    changeColor(elm, "color" + id);
+                }
+            });
+        }
+    });
+    //-->
+</script>

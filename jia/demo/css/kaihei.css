@@ -1,0 +1,24 @@
+#accordion {
+}
+#accordion dt {
+    cursor:pointer;
+    background-image: url(./image/goal1.png);
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    border:solid 1px #ccc;
+    padding:15px;
+    font-size:14px; 
+}
+#accordion dd{
+    display:none;
+    font-size:14px;
+    margin:0;
+    padding:15px;   
+    }
+#accordion dt.active{
+    background-image: url(./image/minus.gif);
+}
+#accordion dt.over {
+    background-color: #CCC;
+}
+
