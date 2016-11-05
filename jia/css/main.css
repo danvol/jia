@@ -27,6 +27,18 @@ body {
 	top: 36% !important;
 }
 
+.huanL_xs {
+	background-image: none !important;
+    width: 3% !important;
+    height: 73%;
+}
+
+.huanR_xs {
+	background-image: none !important;
+    width: 3% !important;
+    height: 73%;
+}
+
 .huanL:before, .huanR:before {
 	content: "" !important;
 }
@@ -98,7 +110,7 @@ body {
 	white-space: nowrap;
 }
 
-.divMain {
+.carousel_main {
 	height: 90% !important;
 	padding: 10px;
 	width: 90%;
@@ -108,8 +120,12 @@ body {
 	left: 0;
 	right: 0;
 	margin: auto;
-	min-width: 780px;
+	min-width: 980px;
 	margin-bottom: auto !important;
+}
+.divMain {
+	min-width: 980px;
+	margin-top: 2%;
 }
 
 .title-bar {
@@ -119,17 +135,19 @@ body {
 }
 
 .n1L {
-	background: url(../images/kbg0.png);
+/* 	background: url(../images/kbg0.png); */
+    background: url(../images/hbg.png);
+    border: #000 solid 1px;
 	padding-left: 6px;
-	padding-right: 6px;
 	margin-bottom: 13px;
-	width: 257px;
 }
 
 .n1R {
-	
+    margin-left: -21px;
 }
-
+.n1R img{
+	height: 96px;
+}
 .n1Lw1 {
 	height: 25px;
 	margin-bottom: 7px;
@@ -137,17 +155,18 @@ body {
 }
 
 .n1Linp1 {
-	width: 100%;
+	width: 97%;
 	overflow: hidden;
 	height: 59px;
 	border: #000 solid 1px;
 }
 
 .n2K {
-	width: 537px;
-	height: 180px;
+	height: 174px;
 	margin-bottom: 5px;
-	background: url(../images/kbg1.png);
+/* 	background: url(../images/kbg1.png); */
+    background: url(../images/hbg.png);
+    border: #000 solid 1px;
 }
 
 .n2KL {
@@ -155,28 +174,29 @@ body {
 	margin-top: 5px;
 	margin-left: 10px;
 }
-
+.n2KL img {
+	height: 159px;
+}
 .n2KR {
-	width: 20%;
+	width: 14%;
 	float: right;
 	background: #FFF;
 	border: #000 solid 1px;
-	margin-right: 30px;
-	margin-top: 20px;
+	margin-right: 4px;
+	margin-top: 4px;
 	text-align: center;
-	padding-top: 5px;
-	float: right;
 }
 
 .n3K {
-	width: 537px;
-	height: 101px;
+	height: 92px;
 	margin-bottom: 5px;
-	background: url(../images/kbg2.png);
+/* 	background: url(../images/kbg2.png); */
+    background: url(../images/hbg.png);
+    border: #000 solid 1px;
 }
 
 .n3Linp1 {
-	width: 93%;
+	width: 97%;
 	height: 73px;
 	border: #000 solid 1px;
 	margin-top: 7px;
@@ -185,10 +205,11 @@ body {
 }
 
 .n4K {
-	width: 537px;
-	height: 101px;
+	height: 92px;
 	margin-bottom: 5px;
-	background: url(../images/kbg3.png);
+/* 	background: url(../images/kbg3.png); */
+    background: url(../images/hbg.png);
+    border: #000 solid 1px;
 }
 
 .colrw1 {
@@ -274,48 +295,21 @@ a:link {
 	background: #FFF;
 }
 
-.menu1 {
-	overflow: hidden;
-}
-
-.menu2 {
-	overflow: hidden;
-}
-
-.menu3 {
-	overflow: hidden;
-}
-
-.menu4 {
-	overflow: hidden;
-}
-
-.menu5 {
-	overflow: hidden;
-}
-
-.menu6 {
-	overflow: hidden;
-}
-
-.menu7 {
-	overflow: hidden;
-}
-
 .n5K {
-	width: 537px;
-	height: 388px;
+	height: 367px;
 	margin-left: 10px;
 	margin-bottom: 5px;
-	background: url(../images/kbg4.png);
+/* 	background: url(../images/kbg4.png); */
 	padding-left: 7px;
+    background: url(../images/hbg.png);
+    border: #000 solid 1px;
 }
 
 .rinp1 {
-	width: 96%;
+	width: 98%;
 	height: 140px;
 	border: #000 solid 1px;
-	margin-bottom: 10px;
+	margin-bottom: 6px;
 	height: 140px;
 }
 
@@ -363,14 +357,24 @@ a:link {
 }
 
 .D3K1n {
-	width: 512px;
 	background: #FFF;
 	border: #000 solid 1px;
 	margin: 7px;
 	height: 250px;
 	overflow: hidden;
 }
-
+.D3K1n_inner{
+    overflow: visible;
+    margin-top: 25px;
+}
+.D3K1n_inner p{
+    margin-bottom: 0px !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    text-align: left !important;
+    margin-left: 25px;
+    margin-right: 25px;
+}
 .D3huanL {
 	float: left;
 	margin-top: 60px;
@@ -401,7 +405,7 @@ a:link {
 .D3K2 {
 	background: url(../images/hbg.png);
 	border: #000 solid 1px;
-	height: 92px;
+	height: 98px;
 	overflow: hidden;
 }
 
@@ -414,13 +418,13 @@ a:link {
 }
 
 .D3yin {
-	width: 512px;
-	height: 75px;
+	height: 82px;
 	overflow-y: scroll;
 	border: #000 solid 1px;
 	background: #FFF;
 	margin-top: 7px;
 	margin-left: 7px;
+	margin-right: 7px;
 }
 
 .D3yin ul {
@@ -429,23 +433,12 @@ a:link {
 }
 
 .D3yin li {
-	float: left;
-	width: 230px;
 	overflow: hidden;
 	margin-bottom: 4px;
-}
-
-.D3yin li a {
-	
-}
-
-.D3yin li span {
-	padding-top: 7px;
 	margin-left: 5px;
 }
 
 .D3RK1 {
-	width: 537px;
 	background: url(../images/hbg.png);
 	border: #000 solid 1px;
 	height: 233px;
@@ -455,7 +448,7 @@ a:link {
 }
 
 .D3RK1inp {
-	width: 515px;
+	width: 96%;
 	overflow-y: scroll;
 	height: 212px;
 	margin-top: 7px;
@@ -464,53 +457,48 @@ a:link {
 }
 
 .D3RK2 {
-	width: 537px;
 	background: url(../images/hbg.png);
 	border: #000 solid 1px;
-	height: 135px;
+	height: 129px;
 	overflow: hidden;
 	margin-left: 10px;
 }
-
+.D3RK2 table{
+	width:96%;
+}
 .D3RK2w1 {
-	width: 502px;
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
-	font-size: 13px;
 	color: #000;
 	border: #000 solid 1px;
-	overflow: hidden;
 	background: #bcb4ac;
-	margin-left: 15px;
+	margin: 10px;
 }
 
 .D3RK2w2 {
-	width: 292px;
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
-	font-size: 13px;
 	color: #000;
 	border: #000 solid 1px;
-	overflow: hidden;
 	background: #fff;
-	margin-left: 15px;
+	margin-left: 25px;
+    margin-bottom: 10px;
 }
 
 .D3RK2w3 {
-	width: 199px;
 	height: 70px;
 	line-height: 30px;
 	text-align: center;
-	font-size: 13px;
 	color: #000;
 	border: #000 solid 1px;
-	overflow: hidden;
 	background: #fff;
-	margin-top: 7px;
+	margin-right: 10px;
 }
-
+.nopadding {
+   padding: 0 !important;
+}
 .vertical_menu {
 	background-color: #0040FF;
 	background: rgba(0,0,255,0.2);
@@ -548,7 +536,7 @@ a:link {
 }
 
 .simulation_tool {
-	height: 379px;
+	height: 367px;
 }
 
 .slideshow {
@@ -556,7 +544,7 @@ a:link {
 }
 
 .resources {
-	height: 92px;
+	height: 98px;
 }
 
 .maintext {
@@ -564,17 +552,31 @@ a:link {
 }
 
 .navigate {
-	height: 135px;
+	height: 129px;
 }
 .introduction{
 	height: 269px;
 }
 .exploring_FWE{
-	height: 367px;
+	height: 371px;
 }
 .exploring_FWE_r_div{
-	height: 367px !important;
+	height: 371px !important;
 }
-.exploring_FWE_r_textarea{
-	height: 348px !important;
+.txtarea{
+	margin-top: 7px;
+    margin-left: 7px;
+    border: #000 solid 1px;
+}
+.introduction_txt{
+	height: 253px;
+    width: 97%;
+}
+.resources_txt{
+	height: 82px;
+    width: 97%;
+}
+.exploring_fwe_txt{
+    height: 355px !important;
+    width: 97%;
 }
